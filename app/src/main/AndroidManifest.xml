@@ -19,6 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".homescreen_add1" />
+        <activity android:name=".homescreen_add2"></activity>
     </application>
 
 </manifest>
