@@ -43,7 +43,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".ListViewSearchActivity"
+            android:name=".ListViewSearchFragment"
             android:label="@string/title_activity_list_view_search"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

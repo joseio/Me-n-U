@@ -6,6 +6,9 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -19,6 +22,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.SearchView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -56,22 +60,37 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
 
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        final FragmentManager fragManager = getSupportFragmentManager();
+        final SupportMapFragment mapFragment = (SupportMapFragment) fragManager.findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
-        /*Switch switch = findViewById(R.id.switch1);
-        switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-
-                }
-            }
-        });*/
-
         initAllRestaurants();
+
         visibleRestaurants = new ArrayList<>();
         Collections.addAll(visibleRestaurants, allRestaurants);
+
+        Switch switch1 = findViewById(R.id.switch1);
+        switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                FragmentTransaction transaction = fragManager.beginTransaction();
+                Fragment fragment = null;
+                if (isChecked) {
+                    fragment = new ListViewSearchFragment();
+                    mapFragment.getView().setVisibility(View.INVISIBLE);
+                    transaction.add(R.id.map, fragment);
+
+                } else {
+                    mapFragment.getView().setVisibility(View.VISIBLE);
+                }
+
+
+                transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                transaction.commit();
+
+            }
+        });
+
+
 
         final SearchView searchView = findViewById(R.id.maptextview);
         searchView.setOnClickListener(new SearchView.OnClickListener() {
