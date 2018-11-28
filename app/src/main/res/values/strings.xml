@@ -1,12 +1,16 @@
 <resources>
     <string name="app_name">Me \'n U</string>
     <string name="action_settings">Settings</string>
-    <string name="restaurant">Restaurant</string>
-    <string name="dish">Dish</string>
+    <string name="restaurant">Pick a Restaurant</string>
+    <string name="dish">Pick a Dish</string>
     <string name="next">NEXT</string>
     <string name="finish">FINISH</string>
     <string-array name="rest_list">
         <item>Cravings</item>
+        <item>Lai Lai Wok</item>
+        <item>Hot Wok Express</item>
+        <item>Blaze Pizza</item>
+        <item>Rosatis</item>
     </string-array>
     <string-array name="dish_list">
         <item>Pork Dumplings</item>
