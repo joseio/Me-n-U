@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private MapRestaurantData[] allRestaurants;
     private ArrayList<MapRestaurantData> visibleRestaurants;
 
+    private ListViewSearchFragment listViewSearchFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +62,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
 
+        listViewSearchFragment = new ListViewSearchFragment();
+
         final FragmentManager fragManager = getSupportFragmentManager();
         final SupportMapFragment mapFragment = (SupportMapFragment) fragManager.findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -72,20 +76,22 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                FragmentTransaction transaction = fragManager.beginTransaction();
-                Fragment fragment = null;
                 if (isChecked) {
-                    fragment = new ListViewSearchFragment();
                     mapFragment.getView().setVisibility(View.INVISIBLE);
-                    transaction.add(R.id.map, fragment);
+
+                    fragManager.beginTransaction()
+                            .add(R.id.fragment_container, listViewSearchFragment)
+                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                            .commit();
 
                 } else {
+                    fragManager.beginTransaction()
+                            .remove(listViewSearchFragment)
+                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                            .commit();
+
                     mapFragment.getView().setVisibility(View.VISIBLE);
                 }
-
-
-                transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-                transaction.commit();
 
             }
         });
