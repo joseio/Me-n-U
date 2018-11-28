@@ -9,7 +9,16 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
+
+    private GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +36,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        MapsActivity mapsActivity = new MapsActivity();
-
-        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, mapsActivity).commit();
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
     }
 
     @Override
@@ -52,5 +60,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(40.108881, -88.227209)));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
     }
 }
