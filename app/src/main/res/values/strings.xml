@@ -16,4 +16,5 @@
         <item>Pork Dumplings</item>
         <item>Orange Chicken</item>
     </string-array>
+    <string name="map_search_bar_hint">Search for a restaurant or dish</string>
 </resources>
