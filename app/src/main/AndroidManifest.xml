@@ -29,7 +29,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
 
-                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
         <!--
@@ -66,6 +66,8 @@
         <activity android:name=".AddMenuItem_2" />
         <activity android:name=".AddMenuItem_3" />
         <activity android:name=".AddMenuItem_RateIt"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".RestaurantMenuActivity"></activity>
     </application>
 
 </manifest>

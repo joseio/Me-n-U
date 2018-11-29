@@ -32,6 +32,7 @@ import android.widget.ToggleButton;
 import com.google.android.gms.common.util.ArrayUtils;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptor;
@@ -45,7 +46,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
     private GoogleMap mMap;
     private MapRestaurantData[] allRestaurants;
@@ -276,6 +277,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        startActivity(new Intent(this, RestaurantMenuActivity.class));
+        return false;
+    }
+
     public void setMapMarkers() {
         mMap.clear();
         for (MapRestaurantData data : visibleRestaurants) {
@@ -290,5 +297,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         setMapMarkers();
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(40.108881, -88.227209)));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
+        mMap.setOnMarkerClickListener(this);
     }
 }
