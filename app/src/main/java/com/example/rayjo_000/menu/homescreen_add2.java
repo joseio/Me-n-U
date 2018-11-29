@@ -32,7 +32,7 @@ public class homescreen_add2 extends Activity {
         finish_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(homescreen_add2.this, MainActivity.class));
+                startActivity(new Intent(homescreen_add2.this, AddMenuItem_RateIt.class));
             }
         });
     }
