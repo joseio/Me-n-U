@@ -16,6 +16,9 @@
         <item>Pork Dumplings</item>
         <item>Orange Chicken</item>
     </string-array>
+    <string name="title_activity_list_view_search">ListViewSearchActivity</string>
+    <string name="title_activity_selected_search_result_gallery">SelectedSearchResultGallery
+    </string>
+    <string name="section_format">Hello World from section: %1$d</string>
     <string name="map_search_bar_hint">Search for a restaurant or dish</string>
-    <string name="google_maps_key">AIzaSyByREQtNBTFkGSwqfeGN995KK_Ovfisxtg</string>
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.rayjo_000.menu">
 
     <!--
@@ -17,7 +18,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -27,7 +29,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
 
-                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
         </activity>
         <!--
@@ -44,7 +46,16 @@
 
         <activity android:name=".homescreen_add1" />
         <activity android:name=".homescreen_add2" />
-        <activity android:name=".orange_chicken_item"></activity>
+        <activity android:name=".orange_chicken_item"/>
+
+        <activity
+            android:name=".ListViewSearchFragment"
+            android:label="@string/title_activity_list_view_search"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SelectedSearchResultGallery"
+            android:label="@string/title_activity_selected_search_result_gallery"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
