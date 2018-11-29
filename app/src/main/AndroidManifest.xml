@@ -47,6 +47,7 @@
             android:label="@string/title_activity_list_view_search"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:exported="true"
             android:name=".SelectedSearchResultGallery"
             android:label="@string/title_activity_selected_search_result_gallery"
             android:theme="@style/AppTheme.NoActionBar"></activity>

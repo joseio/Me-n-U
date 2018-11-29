@@ -5,7 +5,7 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SelectedSearchResultGallery$PlaceholderFragment">
+    tools:context=".SelectedSearchResultGallery">
 
     <TextView
         android:id="@+id/section_label"
@@ -19,5 +19,15 @@
         app:layout_constraintTop_toTopOf="@+id/constraintLayout"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintTop_creator="1" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="332dp"
+        android:layout_height="172dp"
+        android:layout_marginTop="8dp"
+        android:src="@android:drawable/sym_def_app_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
