@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RestaurantMenuActivity">
+
+    <TextView
+        android:id="@+id/restaurantNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Cravings"
+        android:textSize="40dp" />
+
+    <SearchView
+        android:id="@+id/restaurantSearchView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/restaurantNameLabel"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@android:color/darker_gray" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/restaurantSearchView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="-1dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Appetizers"
+                android:textSize="30sp" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_below="@id/title1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:alpha="0.5"
+                android:background="@drawable/dumplings" />
+            <TextView
+                android:id="@+id/itemname1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_alignTop="@id/view1"
+                android:layout_alignLeft="@id/view1"
+                android:layout_alignRight="@id/view1"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="Dumplings"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/itemname1"
+                android:layout_alignLeft="@id/view1"
+                android:textSize="14sp"
+                android:text="⭐⭐⭐"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/itemname1"
+                android:layout_alignRight="@id/view1"
+                android:textSize="14sp"
+                android:text="💲"
+                android:textStyle="bold"/>
+
+
+
+
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_below="@id/title1"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:alpha="0.5"
+                android:background="@drawable/orangechicken" />
+            <TextView
+                android:id="@+id/itemname2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_alignTop="@id/view2"
+                android:layout_alignLeft="@id/view2"
+                android:layout_alignRight="@id/view2"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="Orange Chicken"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/itemname2"
+                android:layout_alignLeft="@id/view2"
+                android:textSize="14sp"
+                android:text="⭐⭐"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/itemname2"
+                android:layout_alignRight="@id/view2"
+                android:textSize="14sp"
+                android:text="💲💲"
+                android:textStyle="bold"/>
+
+
+
+
+
+
+
+
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:background="@color/colorAccent"
+                android:layout_below="@id/view1"
+                android:layout_alignLeft="@id/view1"
+                android:layout_marginTop="30dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/view3"
+                android:layout_alignLeft="@id/view3"
+                android:layout_alignRight="@id/view3"
+                android:layout_alignBottom="@id/view3"
+                android:gravity="center"
+                android:text="Add menu item"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
