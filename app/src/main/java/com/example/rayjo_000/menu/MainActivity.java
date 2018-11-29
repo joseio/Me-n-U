@@ -4,10 +4,15 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -15,8 +20,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.SearchView;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -36,6 +45,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private MapRestaurantData[] allRestaurants;
     private ArrayList<MapRestaurantData> visibleRestaurants;
 
+    private ListViewSearchFragment listViewSearchFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,34 +63,66 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
 
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        listViewSearchFragment = new ListViewSearchFragment();
 
+        final FragmentManager fragManager = getSupportFragmentManager();
+        final SupportMapFragment mapFragment = (SupportMapFragment) fragManager.findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
         initAllRestaurants();
+
         visibleRestaurants = new ArrayList<>();
         Collections.addAll(visibleRestaurants, allRestaurants);
 
-        final EditText searchField = findViewById(R.id.maptextview);
-        searchField.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+        Switch switch1 = findViewById(R.id.switch1);
+        switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    visibleRestaurants = new ArrayList<>();
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    mapFragment.getView().setVisibility(View.INVISIBLE);
 
-                    String searchText = v.getText().toString();
-                    if (searchText.equals("")) {
-                        Collections.addAll(visibleRestaurants, allRestaurants);
-                    }
+                    fragManager.beginTransaction()
+                            .add(R.id.fragment_container, listViewSearchFragment)
+                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                            .commit();
 
-                    // check if searching tag or name
-                    for (MapRestaurantData data : allRestaurants) {
-                        for (int i = 0; i < data.tags.length; i++) {
-                            if (data.tags[i].equals(searchText)) {
-                                visibleRestaurants.add(data);
-                                break;
-                            }
+                } else {
+                    fragManager.beginTransaction()
+                            .remove(listViewSearchFragment)
+                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                            .commit();
+
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            mapFragment.getView().setVisibility(View.VISIBLE);
                         }
-                    }
+                    }, 200);
+                }
+
+            }
+        });
+
+
+
+        final SearchView searchView = findViewById(R.id.maptextview);
+        searchView.setOnClickListener(new SearchView.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchView.setIconified(false);
+            }
+        });
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextChange(String query) {
+//              //Empty for now
+                //TODO: Show drop-down suggestions as we type
+
+                if (TextUtils.isEmpty(query)) {
+                    visibleRestaurants = new ArrayList<>();
+                    Collections.addAll(visibleRestaurants, allRestaurants);
+
                     setMapMarkers();
 
                     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -87,6 +130,27 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     return true;
                 }
                 return false;
+            }
+
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                visibleRestaurants = new ArrayList<>();
+                System.out.println(query);
+
+                // check if searching tag or name
+                for (MapRestaurantData data : allRestaurants) {
+                    for (int i = 0; i < data.tags.length; i++) {
+                        if (data.tags[i].equals(query)) {
+                            visibleRestaurants.add(data);
+                            break;
+                        }
+                    }
+                }
+                setMapMarkers();
+
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+                return true;
             }
         });
     }
