@@ -10,17 +10,35 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+import android.view.View;
+import android.widget.Button;
+import android.content.Intent;
 
-public class AddMenuItem_3 extends Activity {
+public class AddMenuItem_3 extends Activity implements View.OnClickListener {
 
     private static int RESULT_LOAD_IMG = 1;
     String imgDecodableString;
+
+    private Button upload_button_addmenuitem3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_menu_item_3);
+
+        upload_button_addmenuitem3 = (Button) findViewById(R.id.buttonuploadaddmenuitem3);
+
+        upload_button_addmenuitem3.setOnClickListener((View.OnClickListener) this);
     }
+
+
+
+    public void onClick(View v)  {
+        if(v.getId() == R.id.buttonuploadaddmenuitem3)  {
+            startActivity(new Intent(AddMenuItem_3.this, AddMenuItem_RateIt.class));
+        }
+    }
+
 
     public void loadImagefromGallery(View view) {
         // Create intent to Open Image applications like Gallery, Google Photos

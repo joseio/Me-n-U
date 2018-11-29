@@ -22,6 +22,7 @@
 
 
     <string-array name="populartagsarray">
+        <item></item>
         <item>dumplings</item>
         <item>noodles</item>
         <item>pizza</item>
