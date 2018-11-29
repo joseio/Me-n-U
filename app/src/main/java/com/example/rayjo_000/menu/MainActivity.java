@@ -37,6 +37,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import android.content.Intent;
 
@@ -278,7 +279,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void setMapMarkers() {
         mMap.clear();
         for (MapRestaurantData data : visibleRestaurants) {
-            mMap.addMarker(new MarkerOptions().icon(data.icon).position(data.position));
+            mMap.addMarker(new MarkerOptions().icon(data.icon).position(data.position)).setTag(data);
         }
     }
 

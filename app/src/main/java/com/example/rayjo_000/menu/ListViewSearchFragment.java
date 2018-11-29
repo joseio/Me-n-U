@@ -1,5 +1,6 @@
 package com.example.rayjo_000.menu;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -51,12 +52,30 @@ public class ListViewSearchFragment extends Fragment {
             img = view.findViewById(R.id.imageView);
             img.setVisibility(View.VISIBLE);
             img.setImageBitmap(dishImages.get(0));
+            img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getContext(), SelectedSearchResultGallery.class));
+                }
+            });
             img = view.findViewById(R.id.imageView2);
             img.setVisibility(View.VISIBLE);
             img.setImageBitmap(dishImages.get(1));
+            img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getContext(), SelectedSearchResultGallery.class));
+                }
+            });
             img = view.findViewById(R.id.imageView3);
             img.setVisibility(View.VISIBLE);
             img.setImageBitmap(dishImages.get(2));
+            img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getContext(), SelectedSearchResultGallery.class));
+                }
+            });
         } else if (dishImages.size() == 4) {
             img = view.findViewById(R.id.imageView);
             img.setVisibility(View.VISIBLE);
