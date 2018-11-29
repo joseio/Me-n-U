@@ -21,4 +21,40 @@
     </string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="map_search_bar_hint">Search for a restaurant or dish</string>
+
+    <string-array name="tagsarray">
+        <item>breakfast</item>
+        <item>burgers</item>
+        <item>burrito</item>
+        <item>Chinese</item>
+        <item>fries</item>
+        <item>Indian</item>
+        <item>Italian</item>
+        <item>Mexican</item>
+        <item>noodles</item>
+        <item>pizza</item>
+        <item>salad</item>
+        <item>seafood</item>
+        <item>soup</item>
+        <item>taco</item>
+        <item>vegetarian</item>
+    </string-array>
+
+
+    <string-array name="populartagsarray">
+        <item></item>
+        <item>dumplings</item>
+        <item>noodles</item>
+        <item>pizza</item>
+        <item>spicy</item>
+    </string-array>
+
+
+    <string-array name="menusectionarray">
+        <item>appetizer</item>
+        <item>dessert</item>
+        <item>drinks</item>
+        <item>entree</item>
+    </string-array>
+
 </resources>

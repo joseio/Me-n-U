@@ -56,6 +56,15 @@
             android:name=".SelectedSearchResultGallery"
             android:label="@string/title_activity_selected_search_result_gallery"
             android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:name=".AddMenuItem_1"/>
+           /* android:exported="true" /> */
+        /****************************************************************************Use this line
+        ONLY to test AddMenuItem_1 activity!!!*/
+        <activity android:name=".AddMenuItem_2" />
+        <activity android:name=".AddMenuItem_3" />
+        <activity android:name=".AddMenuItem_RateIt"/>
     </application>
 
 </manifest>
