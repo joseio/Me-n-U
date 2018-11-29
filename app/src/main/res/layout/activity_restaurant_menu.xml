@@ -81,12 +81,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:layout_below="@id/itemname1"
                 android:layout_alignLeft="@id/view1"
-                android:textSize="14sp"
+                android:layout_marginTop="5dp"
                 android:text="⭐⭐⭐"
-                android:textStyle="bold"/>
+                android:textColor="@color/colorAccent"
+                android:textSize="14sp"
+                android:textStyle="bold" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -155,21 +156,23 @@
                 android:id="@+id/view3"
                 android:layout_width="140dp"
                 android:layout_height="140dp"
-                android:background="@color/colorAccent"
+                android:background="@color/colorPrimary"
                 android:layout_below="@id/view1"
                 android:layout_alignLeft="@id/view1"
                 android:layout_marginTop="30dp"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@id/view3"
                 android:layout_alignLeft="@id/view3"
+                android:layout_alignTop="@id/view3"
                 android:layout_alignRight="@id/view3"
                 android:layout_alignBottom="@id/view3"
                 android:gravity="center"
                 android:text="Add menu item"
+                android:textColor="@color/white"
                 android:textSize="24sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
         </RelativeLayout>
     </ScrollView>
