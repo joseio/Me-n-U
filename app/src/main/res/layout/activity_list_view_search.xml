@@ -23,6 +23,7 @@
 
     <include
         layout="@layout/content_list_view_search"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"/>
 
 </android.support.design.widget.CoordinatorLayout>

@@ -6,9 +6,11 @@
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
-         location permissions for the 'MyLocation' functionality. 
+         location permissions for the 'MyLocation' functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -36,11 +38,15 @@
              Note that the API key is linked to the encryption key used to sign the APK.
              You need a different API key for each encryption key, including the release key that is used to
              sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+
+        <activity android:name=".homescreen_add1" />
+        <activity android:name=".homescreen_add2" />
+        <activity android:name=".orange_chicken_item"/>
 
         <activity
             android:name=".ListViewSearchFragment"
@@ -50,7 +56,16 @@
             android:exported="true"
             android:name=".SelectedSearchResultGallery"
             android:label="@string/title_activity_selected_search_result_gallery"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:name=".AddMenuItem_1"/>
+           /* android:exported="true" /> */
+        /****************************************************************************Use this line
+        ONLY to test AddMenuItem_1 activity!!!*/
+        <activity android:name=".AddMenuItem_2" />
+        <activity android:name=".AddMenuItem_3" />
+        <activity android:name=".AddMenuItem_RateIt"/>
     </application>
 
 </manifest>
