@@ -17,4 +17,5 @@
         <item>Orange Chicken</item>
     </string-array>
     <string name="map_search_bar_hint">Search for a restaurant or dish</string>
+    <string name="google_maps_key">AIzaSyByREQtNBTFkGSwqfeGN995KK_Ovfisxtg</string>
 </resources>
