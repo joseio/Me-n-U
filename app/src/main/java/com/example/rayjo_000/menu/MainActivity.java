@@ -130,6 +130,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
         final SearchView searchView = findViewById(R.id.maptextview);
+        searchView.setQueryHint("Search for a restaurant or dish");
         searchView.setOnClickListener(new SearchView.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -172,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 for (MapRestaurantData data : allRestaurants) {
 
                     for (int i = 0; i < data.tags.length; i++) {
-                        if (data.tags[i].equals(query.toLowerCase())) {
+                        if (data.tags[i].contains(query.toLowerCase())) {
                             visibleRestaurants.add(data);
                             if (!once)
                                 for (MapRestaurantData myData : allRestaurants) {
