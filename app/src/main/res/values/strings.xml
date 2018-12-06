@@ -23,38 +23,37 @@
     <string name="map_search_bar_hint">Search for a restaurant or dish</string>
 
     <string-array name="tagsarray">
-        <item>breakfast</item>
-        <item>burgers</item>
-        <item>burrito</item>
+        <item>Breakfast</item>
+        <item>Burgers</item>
+        <item>Burrito</item>
         <item>Chinese</item>
-        <item>fries</item>
+        <item>Fries</item>
         <item>Indian</item>
         <item>Italian</item>
         <item>Mexican</item>
-        <item>noodles</item>
-        <item>pizza</item>
-        <item>salad</item>
-        <item>seafood</item>
-        <item>soup</item>
-        <item>taco</item>
-        <item>vegetarian</item>
+        <item>Noodles</item>
+        <item>Pizza</item>
+        <item>Salad</item>
+        <item>Seafood</item>
+        <item>Soup</item>
+        <item>Taco</item>
+        <item>Vegetarian</item>
     </string-array>
 
 
     <string-array name="populartagsarray">
-        <item></item>
-        <item>dumplings</item>
-        <item>noodles</item>
-        <item>pizza</item>
-        <item>spicy</item>
+        <item>Dumplings</item>
+        <item>Noodles</item>
+        <item>Pizza</item>
+        <item>Spicy</item>
     </string-array>
 
 
     <string-array name="menusectionarray">
-        <item>appetizer</item>
-        <item>dessert</item>
-        <item>drinks</item>
-        <item>entree</item>
+        <item>Appetizer</item>
+        <item>Dessert</item>
+        <item>Drinks</item>
+        <item>Entree</item>
     </string-array>
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyByREQtNBTFkGSwqfeGN995KK_Ovfisxtg</string>
 
