@@ -172,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 for (MapRestaurantData data : allRestaurants) {
 
                     for (int i = 0; i < data.tags.length; i++) {
-                        if (data.tags[i].equals(query.toLowerCase())) {
+                        if (data.tags[i].contains(query.toLowerCase())) {
                             visibleRestaurants.add(data);
                             if (!once)
                                 for (MapRestaurantData myData : allRestaurants) {
