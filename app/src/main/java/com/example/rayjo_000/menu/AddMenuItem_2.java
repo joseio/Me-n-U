@@ -27,7 +27,7 @@ public class AddMenuItem_2 extends Activity implements View.OnClickListener {
 
     public void onClick(View v)  {
         if(v.getId() == R.id.buttonnextaddmenuitem2)  {
-            startActivity(new Intent(AddMenuItem_2.this, AddMenuItem_3.class));
+            startActivity(new Intent(AddMenuItem_2.this, homescreen_add2.class));
         }
     }
 
