@@ -130,6 +130,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
         final SearchView searchView = findViewById(R.id.maptextview);
+        searchView.setQueryHint("Search for a restaurant or dish");
         searchView.setOnClickListener(new SearchView.OnClickListener() {
             @Override
             public void onClick(View v) {
