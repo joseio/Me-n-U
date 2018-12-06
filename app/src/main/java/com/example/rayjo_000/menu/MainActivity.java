@@ -3,36 +3,24 @@ package com.example.rayjo_000.menu;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.CompoundButton;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.Switch;
-import android.widget.TextView;
-import android.widget.ToggleButton;
-
 import com.google.android.gms.common.util.ArrayUtils;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptor;
@@ -51,10 +39,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private GoogleMap mMap;
     private MapRestaurantData[] allRestaurants;
     private ArrayList<MapRestaurantData> visibleRestaurants;
+    private List<Marker> allMarkers;
 
     private ListViewSearchFragment listViewSearchFragment;
     private boolean inMapViewMode = true;
     private List<Integer> dishImages = new ArrayList<>();
+
+    //TODO: Need to allow the list view to be searchable...right now, the search doesn't filter anything in list view
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,7 +119,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         });
 
 
-
         final SearchView searchView = findViewById(R.id.maptextview);
         searchView.setOnClickListener(new SearchView.OnClickListener() {
             @Override
@@ -136,6 +126,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 searchView.setIconified(false);
             }
         });
+
+        //TODO: Need to allow the list view to be searchable...right now, the search doesn't filter anything in list view
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -199,49 +191,47 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
 
-
-
     private void initAllRestaurants() {
-        allRestaurants = new MapRestaurantData[] {
+        allRestaurants = new MapRestaurantData[]{
                 // Cravings
-                new MapRestaurantData(R.drawable.dumplings, getBitmapWithSize(R.drawable.dumplings,130, 130),
+                new MapRestaurantData(R.drawable.dumplings, getBitmapWithSize(R.drawable.dumplings, 130, 130),
                         new LatLng(40.111280, -88.229047),
-                        new String[] {
+                        new String[]{
                                 "chinese",
                                 "dumplings",
                                 "cravings",
                         },
                         "Cravings"),
                 // Lai Lai Wok
-                new MapRestaurantData(R.drawable.orangechicken, getBitmapWithSize(R.drawable.orangechicken,130, 130),
+                new MapRestaurantData(R.drawable.orangechicken, getBitmapWithSize(R.drawable.orangechicken, 130, 130),
                         new LatLng(40.110395, -88.233304),
-                        new String[] {
+                        new String[]{
                                 "chinese",
                                 "orange chicken",
                                 "lai lai wok",
                         },
                         "Lai Lai Wok"),
                 // Hot Wok Express
-                new MapRestaurantData(R.drawable.chinese3, getBitmapWithSize(R.drawable.chinese3,130, 130),
+                new MapRestaurantData(R.drawable.chinese3, getBitmapWithSize(R.drawable.chinese3, 130, 130),
                         new LatLng(40.116486, -88.222531),
-                        new String[] {
+                        new String[]{
                                 "chinese",
                                 "chow mein",
                                 "hot wok express",
                         },
                         "Hot Wok Express"),
                 // Blaze Pizza
-                new MapRestaurantData(R.drawable.pizza1, getBitmapWithSize(R.drawable.pizza1,130, 130),
+                new MapRestaurantData(R.drawable.pizza1, getBitmapWithSize(R.drawable.pizza1, 130, 130),
                         new LatLng(40.109224, -88.227177),
-                        new String[] {
+                        new String[]{
                                 "pizza",
                                 "blaze pizza"
                         },
                         "Blaze Pizza"),
                 // Rosati's Pizza
-                new MapRestaurantData(R.drawable.pizza2, getBitmapWithSize(R.drawable.pizza2,120, 120),
+                new MapRestaurantData(R.drawable.pizza2, getBitmapWithSize(R.drawable.pizza2, 120, 120),
                         new LatLng(40.106520, -88.221736),
-                        new String[] {
+                        new String[]{
                                 "pizza",
                                 "rosati's pizza"
                         },
@@ -284,9 +274,15 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     public void setMapMarkers() {
+        allMarkers = new ArrayList<>();
         mMap.clear();
         for (MapRestaurantData data : visibleRestaurants) {
-            mMap.addMarker(new MarkerOptions().icon(data.icon).position(data.position)).setTag(data);
+            Marker marker = mMap.addMarker(new MarkerOptions()
+                    .icon(data.icon)
+                    .title(data.name)
+                    .position(data.position));
+            marker.setTag(data);
+            allMarkers.add(marker);
         }
     }
 
@@ -298,5 +294,18 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(40.108881, -88.227209)));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
         mMap.setOnMarkerClickListener(this);
+        mMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
+            @Override
+            public void onMapLongClick(LatLng latLng) {
+                for(Marker marker : allMarkers) {
+                    if(Math.abs(marker.getPosition().latitude - latLng.latitude) < 0.001 && Math.abs(marker.getPosition().longitude
+                        - latLng.longitude) < 0.001) {
+                        System.out.println("Marker name = " + marker.getTitle() + " Marker lat = " + Math.abs(marker.getPosition().latitude));
+                        marker.showInfoWindow();
+                        break;
+                    }
+                }
+            }
+        });
     }
 }

@@ -2,13 +2,15 @@ package com.example.rayjo_000.menu;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
 import android.content.Intent;
 
 
-public class AddMenuItem_RateIt extends Activity implements View.OnClickListener {
+public class AddMenuItem_RateIt extends AppCompatActivity implements View.OnClickListener {
 
     private Button finish_button_addmenuitemrating;
 
@@ -16,6 +18,14 @@ public class AddMenuItem_RateIt extends Activity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_menu_item__rate_it);
+
+        Toolbar toolbar = findViewById(R.id.toolbar1);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         finish_button_addmenuitemrating = (Button) findViewById(R.id.buttonfinishaddmenuitemrating);
 
