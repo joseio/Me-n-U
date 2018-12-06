@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
+import android.widget.SearchView;
 
 public class homescreen_add1 extends Activity implements View.OnClickListener {
     private Button next_btn;
@@ -16,6 +17,8 @@ public class homescreen_add1 extends Activity implements View.OnClickListener {
         next_btn = (Button) findViewById(R.id.hmscreenadd_next);
 
         next_btn.setOnClickListener(this);
+        final SearchView searchView = findViewById(R.id.pickrestaurantview);
+        searchView.setQueryHint("Search for a restaurant");
     }
 
     public void onClick(View v){

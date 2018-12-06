@@ -15,7 +15,7 @@
         android:layout_marginEnd="148dp"
         android:layout_marginBottom="15dp"
         android:backgroundTint="@color/colorPrimary"
-        android:fontFamily="casual"
+        android:fontFamily="sans-serif"
         android:text="Next"
         android:textColor="@color/white"
         android:textStyle="bold"

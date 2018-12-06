@@ -66,7 +66,7 @@
         android:layout_marginEnd="148dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="@color/colorPrimary"
-        android:fontFamily="casual"
+        android:fontFamily="sans-serif"
         android:text="Finish"
         android:textAlignment="center"
         android:textAllCaps="true"

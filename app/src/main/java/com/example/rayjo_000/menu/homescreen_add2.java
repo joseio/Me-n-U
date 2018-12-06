@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.widget.Button;
+import android.widget.Toast;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
@@ -54,6 +55,7 @@ public class homescreen_add2 extends Activity {
                     try {
                         Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), selectedImage);
                         iv.setImageBitmap(bitmap);
+                        Toast.makeText(getApplicationContext(),"Picture Selected", Toast.LENGTH_LONG).show();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

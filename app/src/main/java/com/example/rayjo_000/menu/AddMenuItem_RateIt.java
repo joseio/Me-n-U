@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
 import android.content.Intent;
+import android.widget.Toast;
 
 
 public class AddMenuItem_RateIt extends Activity implements View.OnClickListener {
@@ -34,6 +35,7 @@ public class AddMenuItem_RateIt extends Activity implements View.OnClickListener
 
     public void onClick(View v)  {
         if(v.getId() == R.id.buttonfinishaddmenuitemrating)  {
+            Toast.makeText(getApplicationContext(),"Picture Added Successfully", Toast.LENGTH_LONG).show();
             startActivity(new Intent(AddMenuItem_RateIt.this, MainActivity.class));
         }
     }
