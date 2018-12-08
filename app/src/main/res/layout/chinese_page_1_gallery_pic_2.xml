@@ -8,8 +8,8 @@
     tools:context=".SelectedSearchResultGallery">
 
 
-    <ImageButton
-        android:id="@+id/imageButton10"
+    <ImageView
+        android:id="@+id/imageView11"
         android:layout_width="332dp"
         android:layout_height="172dp"
         android:layout_marginTop="196dp"

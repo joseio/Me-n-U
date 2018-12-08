@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".SelectedSearchResultGallery">
+    tools:context=".ChinesePage1Gallery">
 
     <android.support.v7.widget.Toolbar
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Search Results"
+            android:text="Chinese Food"
             android:layout_gravity="left"
             android:textSize="26sp"
             android:textColor="@android:color/white"
@@ -29,14 +29,5 @@
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" >
-
-        <android.support.v4.view.PagerTitleStrip
-            android:layout_width="wrap_content"
-            android:background="?attr/colorPrimary"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:layout_gravity="top" />
-    </android.support.v4.view.ViewPager>
-
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 </android.support.design.widget.CoordinatorLayout>

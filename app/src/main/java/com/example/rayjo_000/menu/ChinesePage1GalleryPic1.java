@@ -10,24 +10,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-public class ChinesePage2 extends Fragment {
+
+public class ChinesePage1GalleryPic1 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.chinese_page_2, container, false);
-        ImageView img = rootView.findViewById(R.id.imageButton9);
+        View rootView = inflater.inflate(R.layout.chinese_page_1_gallery_pic_1, container, false);
+        ImageView img = rootView.findViewById(R.id.imageView10);
 
-        img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), ChinesePage1Gallery.class);
-                startActivity(intent);
-            }
-        });
-
-        int width = 850;
-        int height = 420;
-        Bitmap bitmap = ((BitmapDrawable) getResources().getDrawable(R.drawable.orangechicken)).getBitmap();
+        int width = 332;
+        int height = 172;
+        Bitmap bitmap = ((BitmapDrawable) getResources().getDrawable(R.drawable.dumplings2)).getBitmap();
         bitmap = Bitmap.createScaledBitmap(bitmap, width, height, false);
         img.setImageBitmap(bitmap);
         return rootView;

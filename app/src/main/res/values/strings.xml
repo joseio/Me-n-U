@@ -60,5 +60,6 @@
         <item>Entree</item>
     </string-array>
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyByREQtNBTFkGSwqfeGN995KK_Ovfisxtg</string>
+    <string name="title_activity_chinese_page1_gallery">ChinesePage1Gallery</string>
 
 </resources>

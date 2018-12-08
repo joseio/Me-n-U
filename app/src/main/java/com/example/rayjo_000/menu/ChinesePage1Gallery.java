@@ -12,7 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class SelectedSearchResultGallery extends AppCompatActivity {
+public class ChinesePage1Gallery extends AppCompatActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -32,9 +32,10 @@ public class SelectedSearchResultGallery extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_selected_search_result_gallery);
+        setContentView(R.layout.activity_chinese_page1_gallery);
 
         Toolbar toolbar = findViewById(R.id.toolbar1);
+
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,14 +43,16 @@ public class SelectedSearchResultGallery extends AppCompatActivity {
                 finish();
             }
         });
+
         setSupportActionBar(toolbar);
+
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.viewpager);
+        mViewPager = findViewById(R.id.viewpager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
 
@@ -59,7 +62,7 @@ public class SelectedSearchResultGallery extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_selected_search_result_gallery, menu);
+        getMenuInflater().inflate(R.menu.menu_chinese_page1_gallery, menu);
         return true;
     }
 
@@ -93,27 +96,14 @@ public class SelectedSearchResultGallery extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return new ChinesePage1();
+                    return new ChinesePage1GalleryPic1();
                 case 1:
-                    return new ChinesePage2();
+                    return new ChinesePage1GalleryPic2();
                 case 2:
-                    return new ChinesePage3();
+                    return new ChinesePage1GalleryPic3();
                 default:
                     return null;
             }
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return "Cravings";
-                case 1:
-                    return "Lai Lai Wok";
-                case 2:
-                    return "Hot Wok Express";
-            }
-            return null;
         }
 
         @Override
