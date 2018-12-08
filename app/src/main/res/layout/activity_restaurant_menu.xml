@@ -87,18 +87,20 @@
                 android:layout_marginTop="20dp"
                 android:alpha="0.5"
                 android:background="@drawable/dumplings" />
+
             <TextView
                 android:id="@+id/itemname1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_alignTop="@id/view1"
                 android:layout_alignLeft="@id/view1"
+                android:layout_alignTop="@id/view1"
                 android:layout_alignRight="@id/view1"
+                android:layout_marginTop="8dp"
                 android:gravity="center"
-                android:textSize="20sp"
                 android:text="Dumplings"
-                android:textStyle="bold"/>
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -110,15 +112,17 @@
                 android:textColor="@color/colorAccent"
                 android:textSize="14sp"
                 android:textStyle="bold" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:layout_below="@id/itemname1"
                 android:layout_alignRight="@id/view1"
-                android:textSize="14sp"
+                android:layout_marginTop="5dp"
                 android:text="$4.25"
-                android:textStyle="bold"/>
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <!--end code for dumplings dish icon in menu-->
 
@@ -134,18 +138,20 @@
                 android:layout_marginTop="20dp"
                 android:alpha="0.5"
                 android:background="@drawable/veggieeggroll" />
+
             <TextView
                 android:id="@+id/itemnameVeggieEggroll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_alignTop="@id/viewVeggieEggroll"
                 android:layout_alignLeft="@id/viewVeggieEggroll"
+                android:layout_alignTop="@id/viewVeggieEggroll"
                 android:layout_alignRight="@id/viewVeggieEggroll"
+                android:layout_marginTop="8dp"
                 android:gravity="center"
-                android:textSize="20sp"
                 android:text="Veggie Eggroll"
-                android:textStyle="bold"/>
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -157,15 +163,17 @@
                 android:textColor="@color/colorAccent"
                 android:textSize="14sp"
                 android:textStyle="bold" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:layout_below="@id/itemnameVeggieEggroll"
                 android:layout_alignRight="@id/viewVeggieEggroll"
-                android:textSize="14sp"
+                android:layout_marginTop="5dp"
                 android:text="$2.00"
-                android:textStyle="bold"/>
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <!--end code for veggie eggroll dish icon in menu-->
 
@@ -201,14 +209,15 @@
                 android:id="@+id/itemnameOrangeChicken"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_alignTop="@id/viewOrangeChicken"
                 android:layout_alignLeft="@id/viewOrangeChicken"
+                android:layout_alignTop="@id/viewOrangeChicken"
                 android:layout_alignRight="@id/viewOrangeChicken"
+                android:layout_marginTop="8dp"
                 android:gravity="center"
-                android:textSize="20sp"
                 android:text="Orange Chicken"
-                android:textStyle="bold"/>
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -220,15 +229,17 @@
                 android:textColor="@color/colorAccent"
                 android:textSize="14sp"
                 android:textStyle="bold" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:layout_below="@id/itemnameOrangeChicken"
                 android:layout_alignRight="@id/viewOrangeChicken"
-                android:textSize="14sp"
+                android:layout_marginTop="5dp"
                 android:text="$6.99"
-                android:textStyle="bold"/>
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <!--end code for orange chicken dish icon in menu-->
 
@@ -245,18 +256,20 @@
                 android:layout_marginTop="20dp"
                 android:alpha="0.5"
                 android:background="@drawable/mongolianbeef" />
+
             <TextView
                 android:id="@+id/itemnameMongBeef"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_alignTop="@id/viewMongBeef"
                 android:layout_alignLeft="@id/viewMongBeef"
+                android:layout_alignTop="@id/viewMongBeef"
                 android:layout_alignRight="@id/viewMongBeef"
+                android:layout_marginTop="8dp"
                 android:gravity="center"
-                android:textSize="20sp"
                 android:text="Mongolian Beef"
-                android:textStyle="bold"/>
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -268,15 +281,17 @@
                 android:textColor="@color/colorAccent"
                 android:textSize="14sp"
                 android:textStyle="bold" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:layout_below="@id/itemnameMongBeef"
                 android:layout_alignRight="@id/viewMongBeef"
-                android:textSize="14sp"
+                android:layout_marginTop="5dp"
                 android:text="$7.99"
-                android:textStyle="bold"/>
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <!--end code for Mongolian beef dish icon in menu-->
 
@@ -297,14 +312,15 @@
                 android:id="@+id/itemnameKPpork"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_alignTop="@id/viewKPpork"
                 android:layout_alignLeft="@id/viewKPpork"
+                android:layout_alignTop="@id/viewKPpork"
                 android:layout_alignRight="@id/viewKPpork"
+                android:layout_marginTop="8dp"
                 android:gravity="center"
-                android:textSize="20sp"
                 android:text="Kung Pao Pork"
-                android:textStyle="bold"/>
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -316,15 +332,17 @@
                 android:textColor="@color/colorAccent"
                 android:textSize="14sp"
                 android:textStyle="bold" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:layout_below="@id/itemnameKPpork"
                 android:layout_alignRight="@id/viewKPpork"
-                android:textSize="14sp"
+                android:layout_marginTop="5dp"
                 android:text="$5.25"
-                android:textStyle="bold"/>
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <!--end code for Kung Pao Pork dish icon in menu-->
 
@@ -341,18 +359,20 @@
                 android:layout_marginTop="20dp"
                 android:alpha="0.5"
                 android:background="@drawable/hunanpork" />
+
             <TextView
                 android:id="@+id/itemnameHunanPork"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_alignTop="@id/viewHunanPork"
                 android:layout_alignLeft="@id/viewHunanPork"
+                android:layout_alignTop="@id/viewHunanPork"
                 android:layout_alignRight="@id/viewHunanPork"
+                android:layout_marginTop="8dp"
                 android:gravity="center"
-                android:textSize="20sp"
                 android:text="Hunan Pork"
-                android:textStyle="bold"/>
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -364,15 +384,17 @@
                 android:textColor="@color/colorAccent"
                 android:textSize="14sp"
                 android:textStyle="bold" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:layout_below="@id/itemnameHunanPork"
                 android:layout_alignRight="@id/viewHunanPork"
-                android:textSize="14sp"
+                android:layout_marginTop="5dp"
                 android:text="$8.99"
-                android:textStyle="bold"/>
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <!--end code for Hunan Pork dish icon in menu-->
 
