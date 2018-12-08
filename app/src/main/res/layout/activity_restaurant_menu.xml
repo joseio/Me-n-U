@@ -16,7 +16,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:text="Cravings"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorPrimary"
         android:textSize="40dp" />
 
     <SearchView
@@ -116,7 +116,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
                 android:alpha="0.5"
-                android:background="@drawable/dumplings" />
+                android:background="@drawable/veggieeggroll" />
             <TextView
                 android:id="@+id/itemnameVeggieEggroll"
                 android:layout_width="wrap_content"
@@ -227,7 +227,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
                 android:alpha="0.5"
-                android:background="@drawable/dumplings" />
+                android:background="@drawable/mongolianbeef" />
             <TextView
                 android:id="@+id/itemnameMongBeef"
                 android:layout_width="wrap_content"
@@ -274,7 +274,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:alpha="0.5"
-                android:background="@drawable/dumplings" />
+                android:background="@drawable/kungpaopork" />
 
             <TextView
                 android:id="@+id/itemnameKPpork"
@@ -323,7 +323,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
                 android:alpha="0.5"
-                android:background="@drawable/dumplings" />
+                android:background="@drawable/hunanpork" />
             <TextView
                 android:id="@+id/itemnameHunanPork"
                 android:layout_width="wrap_content"
