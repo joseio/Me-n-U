@@ -17,6 +17,8 @@ import java.util.List;
 
 public class ListViewSearchFragment extends Fragment {
 
+    //TODO: Need to allow the list view to be searchable...right now, the search doesn't filter anything in list view
+
     @Override
     public View onCreateView(LayoutInflater inflater,ViewGroup viewGroup, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.content_list_view_search, viewGroup, false);

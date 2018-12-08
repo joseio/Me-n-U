@@ -7,6 +7,8 @@ import android.database.Cursor;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -14,7 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 
-public class AddMenuItem_3 extends Activity implements View.OnClickListener {
+public class AddMenuItem_3 extends AppCompatActivity implements View.OnClickListener {
 
     private static int RESULT_LOAD_IMG = 1;
     String imgDecodableString;
@@ -25,6 +27,14 @@ public class AddMenuItem_3 extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_menu_item_3);
+
+        Toolbar toolbar = findViewById(R.id.toolbar1);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         upload_button_addmenuitem3 = (Button) findViewById(R.id.buttonuploadaddmenuitem3);
 

@@ -7,6 +7,8 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.support.v4.app.NotificationCompat;
 import android.widget.Button;
 import android.widget.Toast;
@@ -17,10 +19,7 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageView;
 
-
-
-
-public class homescreen_add2 extends Activity {
+public class homescreen_add2 extends AppCompatActivity {
 
     private static final int PICK_IMAGE_REQUEST = 100;
     private ImageView iv;
@@ -29,6 +28,14 @@ public class homescreen_add2 extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen_add2);
+
+        Toolbar toolbar = findViewById(R.id.toolbar1);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         iv = (ImageView) findViewById(R.id.imgView);
 
