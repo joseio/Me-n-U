@@ -12,7 +12,7 @@ public class RestaurantMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_menu);
 
-        View view2 = findViewById(R.id.view2);
+        View view2 = findViewById(R.id.viewOrangeChicken);
         view2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

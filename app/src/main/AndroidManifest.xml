@@ -59,10 +59,8 @@
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity
-            android:name=".AddMenuItem_1"/>
-           /* android:exported="true" /> */
-        /****************************************************************************Use this line
-        ONLY to test AddMenuItem_1 activity!!!*/
+            android:name=".AddMenuItem_1" />
+
         <activity android:name=".AddMenuItem_2" />
         <activity android:name=".AddMenuItem_3" />
         <activity android:name=".AddMenuItem_RateIt"/>

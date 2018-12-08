@@ -1,39 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddMenuItem_RateIt">
+    android:background="@android:color/white"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".AddMenuItem_RateIt"
+    tools:layout_editor_absoluteY="81dp">
+
+
+
 
     <TextView
         android:id="@+id/textViewRateItAddMenuItem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="153dp"
-        android:layout_marginTop="87dp"
-        android:layout_marginEnd="153dp"
-        android:layout_marginBottom="392dp"
-        android:background="#80000000"
+        android:layout_width="241dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif"
         android:text="Rate it!"
         android:textAlignment="center"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorPrimary"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/ratingBaraddmenuitemrating"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Rate it!" />
+        app:layout_constraintVertical_chainStyle="packed" />
+
+
+
 
     <RatingBar
         android:id="@+id/ratingBaraddmenuitemrating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="241dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
         android:layout_marginStart="72dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="72dp"
-        android:layout_marginBottom="319dp"
+        android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,12 +52,12 @@
 
     <TextView
         android:id="@+id/textViewhowwasyourdishquestionaddmenuitemrating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="241dp"
+        android:layout_height="40dp"
         android:layout_marginStart="75dp"
         android:layout_marginTop="96dp"
         android:layout_marginEnd="75dp"
-        android:layout_marginBottom="204dp"
+        android:layout_marginBottom="32dp"
         android:text="How was your dish?"
         android:textAlignment="center"
         android:textSize="24sp"
@@ -62,23 +73,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="148dp"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="148dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="15dp"
         android:backgroundTint="@color/colorPrimary"
         android:fontFamily="sans-serif"
         android:text="Finish"
-        android:textAlignment="center"
-        android:textAllCaps="true"
         android:textColor="@color/white"
-        android:textSize="14sp"
         android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewhowwasyourdishquestionaddmenuitemrating"
-        app:layout_constraintVertical_bias="1.0"
         tools:text="Finish" />
 
-</android.support.constraint.ConstraintLayout>
+
+
+</LinearLayout>
