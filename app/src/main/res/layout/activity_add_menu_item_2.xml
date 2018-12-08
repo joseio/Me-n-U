@@ -1,34 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddMenuItem_2">
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".AddMenuItem_2"
+    tools:layout_editor_absoluteY="81dp">
 
-    <android.support.v7.widget.Toolbar
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        app:navigationIcon="@drawable/back_arrow"
-        android:id="@+id/toolbar1">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add Menu Item"
-            android:layout_gravity="left"
-            android:textSize="26sp"
-            android:textColor="@android:color/white"
-            android:id="@+id/toolbar_title" />
-    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/textViewtagitaddmenuitem2"
+        android:layout_width="241dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="16dp"
+
+
+        android:text="Tag your dish!"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/spinneraddmenuitem2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Spinner
+        android:id="@+id/spinneraddmenuitem2"
+        android:layout_width="165dp"
+        android:layout_height="37dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="32dp"
+        android:entries="@array/tagsarray"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/textViewpopulartagsaddmenuitem2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewtagitaddmenuitem2" />
+
+
+    <TextView
+        android:id="@+id/textViewpopulartagsaddmenuitem2"
+        android:layout_width="241dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="16dp"
+        android:text="Popular tags"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerpopulartagsaddmenuitem2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Spinner
+        android:id="@+id/spinnerpopulartagsaddmenuitem2"
+        android:layout_width="165dp"
+        android:layout_height="37dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="32dp"
+        android:entries="@array/populartagsarray"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/textViewcategoryaddmenuitem2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewpopulartagsaddmenuitem2" />
+
+    <TextView
+        android:id="@+id/textViewcategoryaddmenuitem2"
+        android:layout_width="241dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="16dp"
+        android:text="Category"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/spinnercategoryaddmenuitem2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Spinner
+        android:id="@+id/spinnercategoryaddmenuitem2"
+        android:layout_width="165dp"
+        android:layout_height="37dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="32dp"
+        android:entries="@array/menusectionarray"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/buttonnextaddmenuitem2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewcategoryaddmenuitem2" />
+
 
     <Button
         android:id="@+id/buttonnextaddmenuitem2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="148dp"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="45dp"
         android:layout_marginEnd="148dp"
         android:backgroundTint="@color/colorPrimary"
         android:fontFamily="sans-serif"
@@ -38,103 +129,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnercategoryaddmenuitem2"
         tools:text="Next" />
 
-    <TextView
-        android:id="@+id/textViewtagitaddmenuitem2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="86dp"
-        android:layout_marginEnd="8dp"
-        android:background="#80000000"
-        android:text="Tag your dish!"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/spinneraddmenuitem2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Tag your dish!" />
 
-    <Spinner
-        android:id="@+id/spinneraddmenuitem2"
-        android:layout_width="368dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="54dp"
-        android:entries="@array/tagsarray"
-        app:layout_constraintBottom_toTopOf="@+id/textViewpopulartagsaddmenuitem2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewtagitaddmenuitem2" />
 
-    <TextView
-        android:id="@+id/textViewpopulartagsaddmenuitem2"
-        android:layout_width="368dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="54dp"
-        android:layout_marginEnd="8dp"
-        android:background="#80000000"
-        android:text="Popular tags"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinneraddmenuitem2"
-        tools:text="Popular tags" />
-
-    <Spinner
-        android:id="@+id/spinnerpopulartagsaddmenuitem2"
-        android:layout_width="368dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:entries="@array/populartagsarray"
-        app:layout_constraintBottom_toTopOf="@+id/textViewcategoryaddmenuitem2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewpopulartagsaddmenuitem2" />
-
-    <TextView
-        android:id="@+id/textViewcategoryaddmenuitem2"
-        android:layout_width="364dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="46dp"
-        android:layout_marginEnd="8dp"
-        android:background="#80000000"
-        android:text="Category"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/spinnercategoryaddmenuitem2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerpopulartagsaddmenuitem2"
-        tools:text="Category" />
-
-    <Spinner
-        android:id="@+id/spinnercategoryaddmenuitem2"
-        android:layout_width="368dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="71dp"
-        android:entries="@array/menusectionarray"
-        app:layout_constraintBottom_toTopOf="@+id/buttonnextaddmenuitem2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewcategoryaddmenuitem2" />
-
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
