@@ -1,7 +1,6 @@
 package com.example.rayjo_000.menu;
 
 import android.app.Activity;
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.NotificationChannel;
 import android.app.PendingIntent;
@@ -21,7 +20,6 @@ import android.widget.ImageView;
 
 
 
-
 public class homescreen_add2 extends Activity {
 
     private static final int PICK_IMAGE_REQUEST = 100;
@@ -34,16 +32,9 @@ public class homescreen_add2 extends Activity {
 
         iv = (ImageView) findViewById(R.id.imgView);
 
-        Button finish_btn = (Button)findViewById(R.id.hmscreen_addf);
+        Button pic_btn = (Button)findViewById(R.id.hmscreen_pic);
 
-      /*  finish_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(homescreen_add2.this, AddMenuItem_RateIt.class));
-            }
-        });*/
     }
-
 
     public void loadImagefromGallery(View v) {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
@@ -57,7 +48,6 @@ public class homescreen_add2 extends Activity {
             case PICK_IMAGE_REQUEST:
                 if(resultCode == RESULT_OK){
                     Uri selectedImage = data.getData();
-                    // method 1
                     try {
                         Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), selectedImage);
                         iv.setImageBitmap(bitmap);
@@ -69,6 +59,7 @@ public class homescreen_add2 extends Activity {
                 }
                 break;
         }
+
     }
 
     public void sendNotification(View view) {
@@ -84,7 +75,7 @@ public class homescreen_add2 extends Activity {
         PendingIntent pendingIntent = PendingIntent.getActivity(this,0,rateintent,0);
 
         mBuilder.setContentIntent(pendingIntent);
-        mBuilder.setSmallIcon(R.drawable.common_full_open_on_phone);
+        mBuilder.setSmallIcon(R.drawable.ic_launcher_background);
         mBuilder.setContentTitle("Me 'n U");
         mBuilder.setContentText("Don't Forget to Rate the Food!!!");
         mBuilder.setChannelId(CHANNEL_ID);
