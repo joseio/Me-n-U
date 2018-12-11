@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="8dp"
         android:text="Cravings"
         android:textSize="18sp"
@@ -65,11 +65,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/itemnameMongBeef"
         android:layout_alignLeft="@id/viewMongBeef"
+        android:layout_marginTop="16dp"
         android:text="⭐⭐⭐"
         android:textColor="@color/colorAccent"
         android:textSize="18sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="128dp" />
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
 </android.support.constraint.ConstraintLayout>
