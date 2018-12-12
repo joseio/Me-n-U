@@ -17,13 +17,13 @@ public class AddMenuItem_1 extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_menu_item_1);
 
-        Toolbar toolbar = findViewById(R.id.toolbar1);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+       /* Toolbar toolbar = findViewById(R.id.toolbar1);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {*
             @Override
             public void onClick(View view) {
                 finish();
             }
-        });
+        });*/
 
         next_button_addmenuitem1 = (Button) findViewById(R.id.buttonnextaddmenuitem1);
 
