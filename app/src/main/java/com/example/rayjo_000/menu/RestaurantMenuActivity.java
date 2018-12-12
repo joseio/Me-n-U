@@ -25,7 +25,7 @@ public class RestaurantMenuActivity extends AppCompatActivity {
         view2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), orange_chicken_item.class));
+                startActivity(new Intent(RestaurantMenuActivity.this, orange_chicken_item.class));
             }
         });
 
@@ -33,7 +33,7 @@ public class RestaurantMenuActivity extends AppCompatActivity {
         view3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), AddMenuItem_1.class));
+                startActivity(new Intent(RestaurantMenuActivity.this, AddMenuItem_1.class));
             }
         });
     }
